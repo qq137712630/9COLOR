@@ -1,0 +1,50 @@
+
+
+.page{
+
+	margin: 0 auto;
+	max-width: 60em; /* 960px */
+	border: 1px solid #0f0;
+}
+
+/*
+
+大量网站使用clearfix 类或类似方法
+清除浮动。本书不会对所有这些代码进行详细解释，
+因为有些复杂。不过请将它常备手头，复制到每一
+个需要用到它的网站的样式表中去
+
+对容器添加clearfix 类会清除浮动的
+main 和附注栏元素，从而让容器的高度等于两列
+中较高的那一个的高度
+
+*/
+.clearfix:before,
+.clearfix:after {
+content: " ";
+display: table;
+}
+.clearfix:after {
+clear: both;
+}
+.clearfix {
+*zoom: 1;
+}
+
+.test {
+	margin: 0,auto;
+	
+}
+
+.ge {
+	margin: 0.1em;
+	float: left;
+	width:30%;
+	background:#3f1;
+	height:5em;
+	border: 1px solid #3f1;
+
+	border-radius:20px;
+
+}
+
