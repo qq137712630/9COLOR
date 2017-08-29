@@ -1,10 +1,13 @@
-
+*{
+	box-sizing:border-box;
+}
 
 .page{
 
-	margin: 0 auto;
-	max-width: 60em; /* 960px */
+	margin: 0.8em auto;
+	max-width: 60em; /* 960px */	
 	border: 1px solid #0f0;
+	
 }
 
 /*
@@ -19,6 +22,7 @@ main 和附注栏元素，从而让容器的高度等于两列
 中较高的那一个的高度
 
 */
+/*
 .clearfix:before,
 .clearfix:after {
 content: " ";
@@ -29,22 +33,55 @@ clear: both;
 }
 .clearfix {
 *zoom: 1;
-}
+}*/
 
-.test {
-	margin: 0,auto;
+.test{
+	width:50%;
+	border: 1px solid orange;
+	padding:1em 0 0.3em;
+	display: flex;
+	/*内容两侧间隔相等*/
+	justify-content:space-around;
+	/*换行，第一行在上方*/
+	flex-wrap:wrap;
+	margin:0 auto;
 	
 }
 
 .ge {
-	margin: 0.1em;
-	float: left;
+	
+	height:0;
 	width:30%;
-	background:#3f1;
-	height:5em;
-	border: 1px solid #3f1;
-
-	border-radius:20px;
+	padding-bottom:30%;/*等于格子的宽度*/
+	margin-bottom: calc(5%);
+	background:orange;
+	border-radius:8%;
 
 }
 
+.myButton{
+	
+	margin:0 auto;
+	width:60%;
+	display: flex;
+	border: 1px solid orange;
+	justify-content:center;
+	/*竖排*/
+	flex-direction:column;
+}
+
+.myButton input {
+	margin:1em;
+	padding:1%;
+	border: 1px solid orange;
+	color:orange;
+	background:transparent;
+	border-radius:0.3em;
+	font-size: 1.3em;
+}
+
+.myButton input:hover {
+	color: #fff;
+	background:orange;
+	cursor: pointer;
+}

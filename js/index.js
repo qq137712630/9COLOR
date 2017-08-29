@@ -3,7 +3,7 @@ var eleEnd;
 var eleGe;
 
 var isStart = false;
-var bgColor = "#3f1"; // 格子原背景颜色
+var bgColor = "orange"; // 格子原背景颜色
 
 
 window.onload = function(){
@@ -43,7 +43,9 @@ window.onload = function(){
 			
 		}
 	);
+	
 };
+
 
 var numList = [1,2,3];
 
@@ -52,7 +54,7 @@ function getBgColos(){
 	for(var i=0;i<numList.length;i++){
 
 		eleGe[numList[i]-1].style.background = bgColor;
-		eleGe[numList[i]-1].style.borderColor = bgColor;
+		// eleGe[numList[i]-1].style.borderColor = bgColor;
 	}
 }
 
@@ -66,16 +68,33 @@ function getRnColors(){
 	getBgColos();
 
 	numList[0] = rn(9,1);
-	numList[1] = rn(9,1);
-	numList[2] = rn(9,1);
+	
+	// 保证数字不同
+	do{
+		numList[1] = rn(9,1);
+	}while(numList[1] == numList[0])
+	
+	do{
+		
+		numList[2] = rn(9,1);
+	}while(numList[2] == numList[0] || numList[2] == numList[1])
+	
+	
 	
 	for(var i=0;i<numList.length;i++){
-
-		var strColor = rnColor();
+		
+		var strColor;
+		do{
+			// 保证与背景不同
+			strColor = rnColor();
+			
+		}while(strColor == bgColor)
+		
+		
 		
 		// 更改 css 的 background 属性
 		eleGe[numList[i]-1].style.background = strColor;
-		eleGe[numList[i]-1].style.borderColor = strColor;
+		//eleGe[numList[i]-1].style.borderColor = strColor;
 		
 		console.log(strColor);
 	}
@@ -98,7 +117,7 @@ function getRnColor(){
 	
 	// 更改 css 的 background 属性
 	eleGe[num-1].style.background = strColor;
-	eleGe[num-1].style.borderColor = strColor;
+	//eleGe[num-1].style.borderColor = strColor;
 	
 	console.log(strColor);
 	if(!isStart){
