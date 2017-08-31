@@ -6,7 +6,7 @@
 
 	margin: 0.8em auto;
 	max-width: 60em; /* 960px */	
-	border: 1px solid #0f0;
+	outline:none;
 	
 }
 
@@ -37,7 +37,6 @@ clear: both;
 
 .test{
 	width:50%;
-	border: 1px solid orange;
 	padding:1em 0 0.3em;
 	display: flex;
 	/*内容两侧间隔相等*/
@@ -64,10 +63,10 @@ clear: both;
 	margin:0 auto;
 	width:60%;
 	display: flex;
-	border: 1px solid orange;
 	justify-content:center;
 	/*竖排*/
 	flex-direction:column;
+
 }
 
 .myButton input {
